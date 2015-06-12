@@ -12,6 +12,8 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
+      <%= select_tag(:city_id, options_for_select([['Male', 1], ['Female', 2]], 2)) %>
+
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
