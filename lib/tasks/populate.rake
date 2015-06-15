@@ -25,6 +25,7 @@ namespace :db do
       displayName = Faker::Name.name
       email = "test-#{n+1}@test.org"
       password = "password"
+      avatar = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
       test_user = User.create!(:name => displayName,
         :email => Faker::Internet.email,
         :password => password,
@@ -32,8 +33,8 @@ namespace :db do
         :birth_date => Faker::Date.birthday(min_age = 18, max_age = 65),
         :age => Faker::Number.number(2),
         :gender => [0, 1].sample,
+        :avatar => Faker::Avatar.image(avatar, "50x50", "jpg"),
         :city => Faker::Address.city)
-
-      end #10.times
+      end #20.times
   end
 end

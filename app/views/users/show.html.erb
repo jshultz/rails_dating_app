@@ -16,8 +16,10 @@
     <% @people.each do |person| %>
       <div class="col-xs-3">
         <p>
+          <%= image_tag person.avatar %></br>
           <%= person.name %></br>
-          <%= person.gender == 0 ? 'male' : 'female'  %>
+          <%= person.gender == 0 ? 'male' : 'female'  %><br/>
+          <strong>From: </strong><%= person.city %>
         </p>
       </div>
     <% end %>
