@@ -4,6 +4,11 @@
   </div>
 </div>
 
+<% if @user.id != current_user.id %>
+  <p><%= @user.city %><br/>
+  </p>
+<% end %>
+
 
 <% if @user.id == current_user.id %>
   <div class="row">
@@ -16,10 +21,12 @@
     <% @people.each do |person| %>
       <div class="col-xs-3">
         <p>
-          <%= image_tag person.avatar %></br>
-          <%= person.name %></br>
-          <%= person.gender == 0 ? 'male' : 'female'  %><br/>
-          <strong>From: </strong><%= person.city %>
+          <%= link_to user_path person.id do %>
+            <%= image_tag person.avatar %></br>
+            <%= person.name %></br>
+            <%= person.gender == 0 ? 'male' : 'female'  %><br/>
+            <strong>From: </strong><%= person.city %>
+          <% end %>
         </p>
       </div>
     <% end %>
