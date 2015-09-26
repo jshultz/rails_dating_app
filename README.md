@@ -4,7 +4,7 @@ Simple Rails Site with Bcrypt gem for User authentication.
 
 Site has login/password and account creation.
 
-TODO: add more of the things.
+TODO: need to add more features.
 
 
 The MIT License (MIT)
